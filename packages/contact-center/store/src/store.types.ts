@@ -15,6 +15,7 @@ interface IStore {
     teams: Team[];
     loginOptions: string[];
     cc: IContactCenter;
+    isAgentLoggedIn: boolean;
   
     registerCC(webex: WithWebex['webex']): Promise<Profile>;
     init(params: InitParams): Promise<void>;

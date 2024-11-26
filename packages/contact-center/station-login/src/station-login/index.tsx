@@ -8,13 +8,14 @@ import {useStationLogin} from '../helper';
 import { StationLoginProps } from './station-login.types';
 
 const StationLogin: React.FunctionComponent<StationLoginProps> = observer(({onLogin, onLogout}) => {
-  const {cc, teams, loginOptions} = store;
+  const {cc, teams, loginOptions, isAgentLoggedIn} = store;
   const result = useStationLogin({cc, onLogin, onLogout});
 
   const props = {
     ...result,
     teams,
-    loginOptions
+    loginOptions,
+    isAgentLoggedIn
   };
   return <StationLoginPresentational {...props} />;
 });

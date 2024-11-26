@@ -72,9 +72,14 @@ export interface IStationLoginProps {
    * Handler to set the selected agent team
    */
   setTeam: (team: string) => void;
+
+  /**
+   * Indicates whether the agent is currently logged in.
+   */
+  isAgentLoggedIn:boolean
 }
 
-export type StationLoginPresentationalProps = Pick<IStationLoginProps, 'name' | 'teams' | 'loginOptions' | 'login' | 'logout' | 'loginSuccess' | 'loginFailure' | 'logoutSuccess' | 'setDeviceType' | 'setDialNumber' | 'setTeam'>;
+export type StationLoginPresentationalProps = Pick<IStationLoginProps, 'name' | 'teams' | 'loginOptions' | 'login' | 'logout' | 'loginSuccess' | 'loginFailure' | 'logoutSuccess' | 'setDeviceType' | 'setDialNumber' | 'setTeam' | 'isAgentLoggedIn'>;
 
 export type UseStationLoginProps = Pick<IStationLoginProps, 'cc' | 'onLogin' | 'onLogout'>;
 

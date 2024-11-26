@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {StationLoginPresentationalProps} from './station-login.types';
 
 const StationLoginPresentational: React.FunctionComponent<StationLoginPresentationalProps> = (props) => {
-  const {name, teams, loginOptions, login, logout, setDeviceType, setDialNumber, setTeam} = props; // TODO: Use the  loginSuccess, loginFailure, logoutSuccess props returned fromthe API response via helper file to reflect UI changes
+  const {name, teams, loginOptions, isAgentLoggedIn, login, logout, setDeviceType, setDialNumber, setTeam} = props; // TODO: Use the  loginSuccess, loginFailure, logoutSuccess props returned fromthe API response via helper file to reflect UI changes
 
   useEffect(() => {
     const teamsDropdown = document.getElementById('teamsDropdown') as HTMLSelectElement;
@@ -124,7 +124,7 @@ const StationLoginPresentational: React.FunctionComponent<StationLoginPresentati
                   <option value="" selected hidden>Choose Agent Login Option...</option>
                 </select>
                 <input style={styles.input} id="dialNumber" name="dialNumber" placeholder="Extension/Dial Number" type="text" onInput={updateDN} />
-                <button id="AgentLogin" style={styles.btn} onClick={login}>Login</button>
+                <button id="AgentLogin" style={styles.btn} onClick={login} disabled={isAgentLoggedIn}>Login</button>
                 <button id="logoutAgent" style={styles.btn} onClick={logout}>Logout</button>
               </fieldset>
             </div>
